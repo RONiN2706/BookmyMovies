@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Ticket Booking</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="top-banner">
+        <img src="https://iili.io/FR9ZtcJ.png" alt="Logo" class="top-center-img">
+        <div class="top-right-text">Made by Shila and Samarth :)</div>
+    </div>
+    
+    
+    <div class="container">
+
+        <section id="movie-selection" class="active-step">
+            <br>
+            <br>
+            <h1>Now Showing:</h1>
+            <div id="movie-list" class="grid-container"></div>
+        </section>
+
+        <section id="screen-selection" class="hidden section-card">
+            <h1>Select Screen Type</h1>
+            <div id="screen-list"></div>
+            <button id="back-to-movies-from-screen" class="btn">← Back to Movies</button>
+        </section>
+
+        <section id="showtime-selection" class="hidden section-card">
+            <h1>Select Showtime</h1>
+            <div id="showtime-list" class="grid-container"></div>
+            <button id="back-to-screen-selection" class="btn">← Back to Screen Type</button>
+        </section>
+
+        <section id="seat-selection" class="hidden section-card">
+            <h1>Select Seat</h1>
+            <div id="seat-map"></div>
+            <button id="back-to-showtimes" class="btn">← Back to Showtimes</button>
+        </section>
+
+        <section id="booking-form" class="hidden section-card">
+            <h1>Enter Details</h1>
+            <form id="booking-details">
+                <input type="text" id="name" placeholder="Full Name" required>
+                <input 
+                    type="tel" 
+                    id="phone" 
+                    placeholder="Phone Number" 
+                    pattern="^\d{10}$" 
+                    maxlength="10" 
+                    inputmode="numeric" 
+                    required
+                    autocomplete="tel"
+                    oninvalid="this.setCustomValidity('Please enter a valid phone number')"
+                    oninput="this.setCustomValidity('')"
+                >
+                <button type="submit" class="btn">Confirm Booking</button>
+            </form>
+            <button id="back-to-seats" class="btn">← Change Seat</button>
+        </section>
+
+        <section id="confirmation" class="hidden section-card">
+            <h1>🎉 Booking Confirmed! 🥳</h1>
+            <div id="booking-summary"></div>
+            <button id="new-booking" class="btn">Book Another Ticket</button>
+        </section>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
